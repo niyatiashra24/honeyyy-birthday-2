@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Surprise for Honeyyy 💗</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Pacifico&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+
+:root {
+  --pink: #ff8fb5;
+  --deep: #e94f8a;
+  --light: #fff0f6;
+  --cream: #fffaf2;
+  --ink: #71445a;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #fff1f6;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+button { font: inherit; cursor: pointer; }
+button:focus-visible {
+  outline: 3px solid #a62c65;
+  outline-offset: 4px;
+}
+.hidden { display: none !important; }
+.script { font-family: 'Pacifico', cursive; }
+
+.page {
+  width: min(100% - 24px, 850px);
+  margin: auto;
+}
+
+.paper {
+  background: var(--cream);
+  border: 1px solid #ffd9e6;
+  border-radius: 25px;
+  box-shadow: 0 12px 35px #b84f7020;
+}
+
+.primary, .secondary {
+  padding: 13px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform .2s;
+}
+
+.primary {
+  background: linear-gradient(135deg, #ff88b1, #e94f8a);
+  color: white;
+  border: 0;
+  box-shadow: 0 7px 18px #e94f8a30;
+}
+
+.secondary {
+  background: white;
+  color: var(--deep);
+  border: 1px solid #ffd0e0;
+}
+
+.primary:hover, .secondary:hover {
+  transform: translateY(-2px);
+}
+
+.eyebrow {
+  color: var(--deep);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.section { padding: 28px 20px; margin-top: 24px; }
+.center { text-align: center; }
+
+.section-heading {
+  text-align: center;
+  font: 500 clamp(1.7rem, 6vw, 2.3rem) 'Playfair Display', serif;
+  margin: 10px 0;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: .92rem;
+  line-height: 1.8;
+  max-width: 520px;
+  margin: 0 auto 24px;
+}
+
+.float {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  animation: float 4s ease-in-out infinite;
+}
+
+.f1 { top: 10%; left: 3%; font-size: 27px; }
+.f2 { top: 32%; right: 3%; font-size: 23px; animation-delay: 1s; }
+.f3 { bottom: 12%; left: 4%; font-size: 24px; animation-delay: 2s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-7deg); }
+  50% { transform: translateY(-12px) rotate(7deg); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-8px) rotate(4deg); }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#intro {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 25px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.intro-card {
+  text-align: center;
+  padding: 36px 20px;
+  border: 2px dashed #ffb5ce;
+  border-radius: 28px;
+  background: #fffaf6;
+  box-shadow: 0 12px 35px #b84f7020;
+}
+
+.intro-icon {
+  font-size: 65px;
+  animation: bounce 2s infinite;
+}
+
+.intro-card h1 {
+  font-size: clamp(2.3rem, 9vw, 3.7rem);
+  line-height: 1.25;
+  margin: 14px 0;
+}
+
+.intro-card p { line-height: 1.8; }
+
+.answer-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.tiny {
+  font-size: .8rem;
+  opacity: .7;
+  margin-top: 23px;
+}
+
+#birthday {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 20px;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 45px 18px;
+  min-height: 450px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(140deg, #ffdce9, #fff1dc, #ffe4ee);
+}
+
+.hero-content { position: relative; z-index: 2; }
+
+.hero h1 {
+  font-size: clamp(2.6rem, 10vw, 5rem);
+  line-height: 1.2;
+  color: #d94b83;
+  text-shadow: 2px 3px white;
+  margin: 12px 0;
+}
+
+.hero p { line-height: 1.8; }
+
+.cake {
+  display: inline-block;
+  font-size: clamp(75px, 18vw, 110px);
+  animation: bounce 2.5s infinite;
+}
+
+.sparkle {
+  position: absolute;
+  font-size: 27px;
+  animation: float 4s infinite;
+}
+
+.s1 { top: 12%; left: 9%; }
+.s2 { top: 25%; right: 10%; animation-delay: 1s; }
+.s3 { bottom: 13%; left: 13%; animation-delay: 2s; }
+.s4 { bottom: 18%; right: 12%; animation-delay: .5s; }
+
+/* Hidden until Make it magical is clicked */
+#birthdayContent {
+  display: none;
+  animation: appear .6s ease;
+}
+
+#birthdayContent.show {
+  display: block;
+}
+
+.scrapbook {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 26px;
+}
+
+.memory {
+  position: relative;
+  padding: 12px 10px 17px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px #73445318;
+  text-align: center;
+  min-width: 0;
+}
+
+.memory:nth-child(odd) { transform: rotate(-2deg); }
+.memory:nth-child(even) { transform: rotate(2deg); }
+
+.memory-art {
+  height: 135px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: linear-gradient(145deg, #ffe1ec, #fff0d7);
+  overflow: hidden;
+}
+
+.memory-art span {
+  display: inline-block;
+  font-size: 65px;
+  animation: bounce 3s infinite;
+}
+
+.memory:nth-child(2) .memory-art { background: #fce6f0; }
+.memory:nth-child(3) .memory-art { background: #fff0d9; }
+.memory:nth-child(4) .memory-art { background: #e8e9ff; }
+.memory:nth-child(5) .memory-art { background: #e2f5ed; }
+.memory:nth-child(6) .memory-art { background: #fff0d7; }
+.memory:nth-child(7) .memory-art { background: #e8e9ff; }
+.memory:nth-child(8) .memory-art { background: #ffe1ec; }
+
+.memory-title {
+  font: 1rem 'Pacifico', cursive;
+  margin: 12px 0 5px;
+  color: #d94b83;
+}
+
+.memory p {
+  font-size: .78rem;
+  line-height: 1.6;
+  margin: 5px 0;
+}
+
+.sticker {
+  position: absolute;
+  top: -13px;
+  right: -5px;
+  font-size: 25px;
+  transform: rotate(12deg);
+  z-index: 2;
+}
+
+.scrap-note {
+  margin-top: 25px;
+  padding: 18px;
+  background: #fff0f6;
+  border: 1px dashed #f5a2c0;
+  border-radius: 16px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.letter-area { text-align: center; }
+
+.envelope {
+  background: transparent;
+  border: 0;
+  display: inline-block;
+  padding: 5px;
+  transition: transform .2s;
+}
+
+.envelope:hover {
+  transform: translateY(-4px) rotate(-2deg);
+}
+
+.envelope-art {
+  font-size: clamp(95px, 24vw, 140px);
+  line-height: 1.2;
+  filter: drop-shadow(0 8px 8px #c65a7a20);
+}
+
+.letter-paper {
+  max-width: 580px;
+  margin: 20px auto 0;
+  padding: 24px 20px;
+  border: 1px solid #f5d5b5;
+  border-radius: 12px;
+  background: #fffaf0;
+  text-align: left;
+  box-shadow: 0 8px 20px #79465a13;
+  animation: appear .4s ease;
+}
+
+.letter-paper p {
+  line-height: 1.9;
+  white-space: pre-line;
+}
+
+.signature {
+  text-align: right;
+  color: #df4e88;
+  font: 1.25rem 'Pacifico', cursive;
+}
+
+.gift-art {
+  display: inline-block;
+  font-size: clamp(100px, 24vw, 140px);
+  animation: bounce 2s infinite;
+  line-height: 1.4;
+}
+
+.gift-content {
+  max-width: 500px;
+  margin: 20px auto 0;
+  padding: 22px;
+  background: #fff0f5;
+  border: 1px dashed #f5a2c0;
+  border-radius: 18px;
+  animation: appear .4s ease;
+}
+
+.gift-content p { line-height: 1.8; }
+
+.music-icon { font-size: 36px; }
+
+audio {
+  display: block;
+  width: 100%;
+  max-width: 380px;
+  margin: 18px auto 0;
+}
+
+.music-help {
+  font-size: .83rem;
+  line-height: 1.7;
+  opacity: .8;
+}
+
+footer {
+  text-align: center;
+  padding: 35px 12px 45px;
+  line-height: 1.8;
+  color: #b84e7c;
+}
+
+#confetti-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  top: -30px;
+  animation: fall var(--duration) linear forwards;
+  font-size: var(--size);
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(500deg);
+    opacity: .15;
+  }
+}
+
+.toast {
+  position: fixed;
+  z-index: 30;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100% - 30px);
+  background: #633d50;
+  color: white;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-size: .88rem;
+  text-align: center;
+}
+
+@media (min-width: 650px) {
+  .intro-card { padding: 45px; }
+  .section { padding: 35px; }
+  .scrapbook { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .memory-art { height: 150px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="confetti-layer" aria-hidden="true"></div>
+<div class="float f1">💗</div>
+<div class="float f2">🌸</div>
+<div class="float f3">🎀</div>
+
+<!-- SCREEN 1: INTRO -->
+<section id="intro">
+  <div class="page">
+    <div class="intro-card">
+      <div class="intro-icon">💌</div>
+      <div class="eyebrow">A tiny surprise for someone special</div>
+      <h1 class="script">Hey, Honeyyy! 💗</h1>
+      <p>
+        Someone has prepared a little birthday surprise
+        just for you... but first, one important question! 🎀
+      </p>
+      <h2 style="font-family:'Playfair Display',serif">
+        Are you ready for your surprise? 🥹
+      </h2>
+      <div class="answer-row">
+        <button class="primary" id="yesBtn">YESSS! 💕</button>
+        <button class="secondary" id="noBtn">No 🙈</button>
+      </div>
+      <div class="tiny">P.S. This little page is made with love. 💌</div>
+    </div>
+  </div>
+</section>
+
+<!-- SCREEN 2: BIRTHDAY HERO -->
+<main id="birthday" class="hidden">
+
+  <header class="hero paper">
+    <span class="sparkle s1">✨</span>
+    <span class="sparkle s2">💗</span>
+    <span class="sparkle s3">🌷</span>
+    <span class="sparkle s4">🎀</span>
+
+    <div class="hero-content">
+      <div class="eyebrow">Today is all about you</div>
+      <div class="cake">🎂</div>
+      <h1 class="script">Happy Birthday,<br>Honeyyy! 💗</h1>
+      <p>
+        A little page, a little magic, and a whole lot of love. ✨<br>
+        You deserve the sweetest birthday ever!
+      </p>
+      <button class="primary" id="celebrateBtn">Make it magical! 🎉</button>
+      <p id="magicHint" class="tiny">
+        Tap the button to reveal your birthday surprise! 💗
+      </p>
+    </div>
+  </header>
+
+  <!-- Everything below stays hidden until the magic button is tapped -->
+  <div id="birthdayContent">
+
+    <!-- SCRAPBOOK -->
+    <section class="page paper section" id="memories">
+      <div class="eyebrow center">Your little scrapbook</div>
+      <h2 class="section-heading">A page full of cuteness 🎀</h2>
+      <p class="subtitle">
+        Tiny stickers, sweet wishes, and cute little characters
+        made just for your special day. 💗
+      </p>
+
+      <div class="scrapbook">
+        <article class="memory">
+          <span class="sticker">💗</span>
+          <div class="memory-art"><span>🧸</span></div>
+          <div class="memory-title">A warm hug</div>
+          <p>Sending you the biggest virtual hug today!</p>
+        </article>
+
+        <article class="memory">
+          <span class="sticker">✨</span>
+          <div class="memory-art"><span>🌷</span></div>
+          <div class="memory-title">Little wishes</div>
+          <p>May beautiful things find their way to you.</p>
+        </article>
+
+        <article class="memory">
+          <span class="sticker">🎀</span>
+          <div class="memory-art"><span>🍰</span></div>
+          <div class="memory-title">Sweet moments</div>
+          <p>More cake, more smiles, more happy days!</p>
+        </article>
+
+        <article class="memory">
+          <span class="sticker">🌟</span>
+          <div class="memory-art"><span>🐻</span></div>
+          <div class="memory-title">You are special</div>
+          <p>Never forget that you deserve happiness.</p>
+        </article>
+
+        <article class="memory">
+          <span class="sticker">💕</span>
+          <div class="memory-art"><span>💌</span></div>
+          <div class="memory-title">A little love</div>
+          <p>A small surprise made especially for you.</p>
+        </article>
+
+        <article class="memory">
+          <span class="sticker">🦋</span>
+          <div class="memory-art"><span>🦋</span></div>
+          <div class="memory-title">New beginnings</div>
+          <p>May this new year bring lovely adventures.</p>
+        </article>
+
+        <article class="memory">
+          <span class="sticker">☁️</span>
+          <div class="memory-art"><span>🌙</span></div>
+          <div class="memory-title">Dream big</div>
+          <p>May your favourite dreams come closer.</p>
+        </article>
+
+        <article class="memory">
+          <span class="sticker">🎂</span>
+          <div class="memory-art"><span>🎉</span></div>
+          <div class="memory-title">Your day!</div>
+          <p>Today is your excuse to smile extra wide!</p>
+        </article>
+      </div>
+
+      <div class="scrap-note">
+        <div style="font-size:2rem">💗 ✨ 💗</div>
+        <strong class="script" style="font-size:1.3rem">A tiny birthday reminder</strong>
+        <p>
+          You don't need a perfect day to deserve happiness.
+          I hope today gives you a hundred little reasons to smile. 🌸
+        </p>
+      </div>
+    </section>
+
+    <!-- LOVE LETTER -->
+    <section class="page paper section letter-area" id="letterSection">
+      <div class="eyebrow">A letter just for you</div>
+      <h2 class="section-heading">Open when you need a little love 💌</h2>
+      <p class="subtitle">
+        There's a little letter waiting inside this envelope.
+        Tap it to open your surprise!
+      </p>
+
+      <button class="envelope" id="envelopeBtn"
+        aria-expanded="false" aria-controls="letterPaper"
+        aria-label="Open your birthday letter">
+        <div class="envelope-art" id="envelopeArt">💌</div>
+      </button>
+      <p id="envelopeHint">Tap the envelope, Honeyyy! 💗</p>
+
+      <article class="letter-paper hidden" id="letterPaper">
+        <div class="script" style="font-size:1.35rem">To my Honeyyy, 💗</div>
+        <p>Happy Birthday, Honeyyy! 🎂💕
+
+I hope your special day brings you the kind of happiness that stays with you long after the candles are blown out.
+
+You deserve love, laughter, peaceful days, beautiful memories, and a thousand little reasons to smile. I hope this new chapter of your life brings you closer to all the things your heart wishes for.
+
+I made this little surprise with care, hoping it would make you smile and remind you that you are special.
+
+So today, enjoy something delicious, laugh as much as you can, make lovely memories, and never forget that you deserve good things. 🥹💗
+
+Happy birthday once again, Honeyyy! May your day be as lovely as the happiness you bring into the world. 🎀✨</p>
+        <div class="signature">Your Madam 💋💕</div>
+      </article>
+    </section>
+
+    <!-- GIFT REVEAL -->
+    <section class="page paper section center" id="giftSection">
+      <div class="eyebrow">One last little surprise</div>
+      <h2 class="section-heading">A gift for you, Honeyyy! 🎁</h2>
+      <p class="subtitle">Ready to unwrap one more little surprise?</p>
+
+      <div class="gift-art" id="giftArt">🎁</div>
+      <div>
+        <button class="primary" id="giftBtn">Open your gift! 🎀</button>
+      </div>
+
+      <div class="gift-content hidden" id="giftContent">
+        <div style="font-size:3rem">💖🌷✨</div>
+        <h3 class="script" style="font-size:1.6rem">Surprise, Honeyyy!</h3>
+        <p>
+          Your little gift is a wish from me to you:
+          may your days be full of happiness, your heart feel loved,
+          and your dreams find their way to you. 💕
+        </p>
+        <p><strong>Birthday hugs and lots of love!</strong> 🎂</p>
+        <div class="signature">— Your Madam 💗</div>
+      </div>
+    </section>
+
+    <!-- MUSIC PLAYER -->
+    <section class="page paper section center" id="musicSection">
+      <div class="eyebrow">Your birthday soundtrack</div>
+      <h2 class="section-heading">A little music for you 🎶</h2>
+      <p class="subtitle">
+        A little song for your special day. Press play whenever you're ready! 💗
+      </p>
+
+      <div class="music-icon">🎧💗</div>
+      <strong>Honeyyy's birthday song</strong>
+      <p class="music-help">A little soundtrack, chosen with love.</p>
+
+      <audio id="birthdayAudio" controls loop preload="metadata">
+        <source src="./birthday-song.mp3.mpeg" type="audio/mpeg">
+        Your browser does not support audio.
+      </audio>
+
+      <p class="music-help" id="musicHint">
+        Press Play to listen to your birthday song. 🎶
+      </p>
+    </section>
+
+    <footer>
+      <div style="font-size:2rem">🎀 💗 🎂 💗 🎀</div>
+      <div class="script" style="font-size:1.5rem">Made with love by Madam</div>
+      <div>Especially for Honeyyy, with all the pink hearts. 💕</div>
+      <button class="secondary" id="topBtn" style="margin-top:18px">
+        Back to the top ↑
+      </button>
+    </footer>
+
+  </div>
+</main>
+
+<div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+<script>
+const intro = document.getElementById('intro');
+const birthday = document.getElementById('birthday');
+const toast = document.getElementById('toast');
+const confettiLayer = document.getElementById('confetti-layer');
+
+let toastTimer;
+
+function showToast(message) {
+  toast.textContent = message;
+  toast.classList.remove('hidden');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.add('hidden'), 2500);
+}
+
+function celebrate(amount = 35) {
+  const decorations = ['💗', '💕', '✨', '🎀', '🌸', '💖', '🎉'];
+
+  for (let i = 0; i < amount; i++) {
+    const piece = document.createElement('span');
+    piece.className = 'confetti';
+    piece.textContent =
+      decorations[Math.floor(Math.random() * decorations.length)];
+    piece.style.left = Math.random() * 100 + 'vw';
+    piece.style.setProperty('--duration', (2.5 + Math.random() * 3) + 's');
+    piece.style.setProperty('--size', (14 + Math.random() * 17) + 'px');
+    piece.style.animationDelay = (Math.random() * 0.5) + 's';
+    confettiLayer.appendChild(piece);
+    piece.addEventListener('animationend', () => piece.remove());
+  }
+}
+
+/* YES opens only the birthday hero */
+function openBirthday() {
+  intro.classList.add('hidden');
+  birthday.classList.remove('hidden');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  celebrate(45);
+}
+
+document.getElementById('yesBtn')
+  .addEventListener('click', openBirthday);
+
+/* NO button remains playful */
+let noMoves = 0;
+const noBtn = document.getElementById('noBtn');
+
+noBtn.addEventListener('click', () => {
+  noMoves++;
+
+  const messages = [
+    'Hehe, are you sure? 🥹',
+    'There might be cake involved! 🎂',
+    'One tiny surprise? Pretty please? 💗',
+    'Okay, let us see the surprise! 🎀'
+  ];
+
+  showToast(messages[Math.min(noMoves - 1, messages.length - 1)]);
+
+  if (noMoves >= 3) {
+    noBtn.textContent = 'Okay, YES! 💕';
+    noBtn.classList.remove('secondary');
+    noBtn.classList.add('primary');
+    noBtn.onclick = openBirthday;
+  } else {
+    noBtn.style.transform =
+      `translate(${Math.random() * 36 - 18}px, ${Math.random() * 20 - 10}px)`;
+  }
+});
+
+/* Make it magical reveals the rest of the birthday website */
+document.getElementById('celebrateBtn').addEventListener('click', () => {
+  const content = document.getElementById('birthdayContent');
+  const hint = document.getElementById('magicHint');
+
+  if (!content.classList.contains('show')) {
+    content.classList.add('show');
+    hint.textContent = 'Your magical birthday surprise is here! 💗';
+    celebrate(60);
+
+    setTimeout(() => {
+      document.getElementById('memories').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }, 150);
+  } else {
+    document.getElementById('memories').scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+});
+
+/* Open and close the letter */
+const envelopeBtn = document.getElementById('envelopeBtn');
+const letterPaper = document.getElementById('letterPaper');
+const envelopeArt = document.getElementById('envelopeArt');
+const envelopeHint = document.getElementById('envelopeHint');
+
+envelopeBtn.addEventListener('click', () => {
+  const opening = letterPaper.classList.contains('hidden');
+
+  letterPaper.classList.toggle('hidden');
+  envelopeArt.textContent = opening ? '💌' : '✉️';
+  envelopeBtn.setAttribute('aria-expanded', String(opening));
+
+  envelopeHint.textContent = opening
+    ? 'Your letter is open. Read it slowly, Honeyyy. 💗'
+    : 'Your letter is tucked away. Tap to open it again! 💌';
+
+  if (opening) {
+    setTimeout(() => letterPaper.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest'
+    }), 100);
+  }
+});
+
+/* Reveal and hide the gift */
+const giftBtn = document.getElementById('giftBtn');
+const giftContent = document.getElementById('giftContent');
+const giftArt = document.getElementById('giftArt');
+
+giftBtn.addEventListener('click', () => {
+  const opening = giftContent.classList.contains('hidden');
+
+  giftContent.classList.toggle('hidden');
+  giftArt.textContent = opening ? '🎉' : '🎁';
+  giftBtn.textContent = opening
+    ? 'Hide the surprise 💗'
+    : 'Open your gift! 🎀';
+
+  if (opening) {
+    celebrate(40);
+    setTimeout(() => giftContent.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest'
+    }), 100);
+  }
+});
+
+/* Back to the top */
+document.getElementById('topBtn').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* Music player status */
+const audio = document.getElementById('birthdayAudio');
+const musicHint = document.getElementById('musicHint');
+
+audio.addEventListener('error', () => {
+  musicHint.textContent =
+    'Song not found. Check that birthday-song.mp3.mpeg is beside index.html in your birthday folder.';
+});
+
+audio.addEventListener('canplay', () => {
+  musicHint.textContent =
+    'Your song is ready! Press Play whenever you like. 🎶';
+});
+</script>
+
+</body>
+</html>
